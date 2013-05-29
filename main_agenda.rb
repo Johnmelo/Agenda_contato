@@ -1,7 +1,15 @@
 require_relative 'Contato.rb'
 class Main_agenda
   def initialize
-    puts("1-VER CONTATOS\n2-ADICIONAR CONTATOS\n3-EDITAR CONTATOS")
+    print("##############################################################")
+    print("##      _______                                            ###")
+    print("##     /      /  #### #### #### ##   #  ####  ####         ###")
+    print("##    /  :P  /   #### # ## ##   # #  #  #   # ####         ###")
+    print("##   /______/    #  # #### #### #   ##  ####  #  #         ###")
+    print("##                                                         ###")
+    print("##############################################################")
+    print("## 1-VER CONTATOS  2-ADICIONAR CONTATOS  3-EDITAR CONTATOS ###")
+    print("##############################################################")
     x = gets
     x=x.to_i
     if x == 1
