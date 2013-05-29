@@ -14,7 +14,8 @@ class Main_agenda
     x = gets
     x=x.to_i
     if x == 1
-      puts("aguarde1 em processo...")
+      user=Contato.new
+      user.see_contato
     end
     if x == 2
       user=Contato.new
