@@ -26,8 +26,8 @@ class Contato
       puts("")
     end
     puts("Editar este contato? 1-SIM 2-NAO")
-    cather=gets
-    cather=cather.to_i
+    catcher=gets
+    catcher=catcher.to_i
     if cather==1
       puts("Nome do contato:")
       filenames=File.new("filenames.txt","a")
@@ -42,7 +42,7 @@ class Contato
       filenames.close
       return Main_agenda.new
     end
-    if cather==2
+    if catcher==2
       return Main_agenda.new
     end
   end
