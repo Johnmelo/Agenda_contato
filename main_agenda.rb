@@ -9,6 +9,7 @@ class Main_agenda
     puts("##                                                         ###")
     puts("##############################################################")
     puts("## 1-VER CONTATOS  2-ADICIONAR CONTATOS  3-EDITAR CONTATOS ###")
+    puts("##                                                4-SAIR   ###")
     puts("##############################################################")
     x = gets
     x=x.to_i
@@ -20,7 +21,11 @@ class Main_agenda
       user.add_contato
     end
     if x == 3
-      puts("aguarde3 em processo...")
+      user=Contato.new
+      user.edit_contato
+    end
+    if x==4
+      exit
     end
   end
 end
