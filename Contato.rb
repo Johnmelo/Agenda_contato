@@ -8,7 +8,7 @@ class Contato
     mail=gets
     puts("Numero:")
     number=gets
-    filenames = File.new("filenames.txt","a")
+    filenames = File.new("filenames.txt","a+")
     filenames.puts("NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}")
     filenames.puts(puts)
     filenames.close
