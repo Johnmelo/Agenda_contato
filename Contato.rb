@@ -1,5 +1,5 @@
 $lista=[]
-
+$id=0
 class Contato
   def add_contato
     puts("Nome do contato:")
@@ -8,46 +8,34 @@ class Contato
     mail=gets
     puts("Numero:")
     number=gets
-    filenames = File.new("filenames.txt","a")
-    filenames.puts("NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}")
-    filenames.puts(puts)
-    filenames.close
-    @id=["NOME: #{name}EMAIL: #{mail}NUMERO: #{number}"]
+    @id=[$id,"NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}"]
     $lista+=@id
+    $id+=1
     return Main_agenda.new
   end
   def edit_contato
-    puts("")
-    File.open("filenames.txt") do |filenames|
-      filenames.each_line do |linha|
-	puts linha
-      end
-      puts("")
+    $lista.each do |bloco|
+      puts " "
+      print bloco
     end
-    puts("Editar este contato? 1-SIM 2-NAO")
+    puts "selecine o id do contato a ser editado:"
     catcher=gets
     catcher=catcher.to_i
-    if cather==1
-      puts("Nome do contato:")
-      filenames=File.new("filenames.txt","a")
-      name=gets
-      filenames.puts(name)
-      puts("e-mail:")
-      mail=gets
-      filenames.puts(mail)
-      puts("Numero:")
-      number=gets
-      filenames.puts(number)
-      filenames.close
-      return Main_agenda.new
-    end
-    if catcher==2
-      return Main_agenda.new
-    end
+    puts "NOME:"
+    name=gets
+    puts "EMAIL:"
+    mail=gets
+    puts "NUMERO:"
+    number=gets
+    @id=[catcher,"NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}"]
+    $lista[catcher]=@id
+    return Main_agenda.new
   end
   def see_contato
-    puts $lista
-    puts " "
+     $lista.each do |bloco|
+      puts " "
+      print bloco
+    end
     return Main_agenda.new
   end
 end
