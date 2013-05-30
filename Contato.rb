@@ -1,20 +1,19 @@
-$id=["NOME : ","EMAIL : ","TELEFONE : "]
+$lista=[]
 
 class Contato
   def add_contato
     puts("Nome do contato:")
-    filenames = File.new("filenames.txt","a")
     name=gets
-    filenames.puts(name)
     puts("e-mail:")
     mail=gets
-    filenames.puts(mail)
     puts("Numero:")
     number=gets
-    filenames.puts(number)
+    filenames = File.new("filenames.txt","a")
+    filenames.puts("NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}")
+    filenames.puts(puts)
     filenames.close
-    @id=[name,mail,number]
-    $id+=@id
+    @id=["NOME: #{name}EMAIL: #{mail}NUMERO: #{number}"]
+    $lista+=@id
     return Main_agenda.new
   end
   def edit_contato
@@ -47,7 +46,9 @@ class Contato
     end
   end
   def see_contato
-    puts $id
+    puts $lista
+    puts " "
+    return Main_agenda.new
   end
 end
 #calma...to desenrolando :P
