@@ -1,4 +1,4 @@
-
+require_relative
 class Interaction
   def add_contato
     puts("Nome do contato:")
