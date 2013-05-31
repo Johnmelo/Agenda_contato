@@ -1,5 +1,4 @@
-$lista=[]
-$id=0
+
 class Interaction
   def add_contato
     puts("Nome do contato:")
@@ -8,9 +7,7 @@ class Interaction
     mail=gets
     puts("Numero:")
     number=gets
-    @id=[$id,"NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}"]
-    $lista+=@id
-    $id+=1
+    list=Contato.new(name,mail,number)
     return Main_agenda.new
   end
   def edit_contato
@@ -27,8 +24,7 @@ class Interaction
     mail=gets
     puts "NUMERO:"
     number=gets
-    @id=[catcher,"NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}"]
-    $lista[catcher]=@id
+    list=Contato.new(name,mail,number)
     return Main_agenda.new
   end
   def see_contato
