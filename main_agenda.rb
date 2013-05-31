@@ -1,4 +1,5 @@
 require_relative 'Interaction.rb'
+
 class Main_agenda
   def initialize
     puts("##############################################################")
