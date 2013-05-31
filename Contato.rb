@@ -1,7 +1,7 @@
 $lista=[]
 $id=0
 class Contato
-  def initialize(nome,email,phone)
+  def initialize(id,nome,email,phone)
     @name=nome
     @mail=email
     @phone=phone
