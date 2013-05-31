@@ -6,7 +6,7 @@ class Contato
     @mail=email
     @phone=phone
     @id=[$id,"NOME:#{@name}","EMAIL:#{@mail}","NUMERO:#{@phone}"]
-    $lista[$id]+=@id
+    $lista[id] = @id
     $id+=1
     return Main_agenda.new
   end
