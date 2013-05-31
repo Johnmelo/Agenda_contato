@@ -1,4 +1,4 @@
-require_relative 'Contato.rb'
+require_relative 'Interaction.rb'
 class Main_agenda
   def initialize
     puts("##############################################################")
@@ -14,15 +14,15 @@ class Main_agenda
     x = gets
     x=x.to_i
     if x == 1
-      user=Contato.new
+      user=Interaction.new
       user.see_contato
     end
     if x == 2
-      user=Contato.new
+      user=Interaction.new
       user.add_contato
     end
     if x == 3
-      user=Contato.new
+      user=Interaction.new
       user.edit_contato
     end
     if x==4
