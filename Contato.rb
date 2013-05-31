@@ -8,15 +8,7 @@ class Contato
     mail=gets
     puts("Numero:")
     number=gets
-<<<<<<< HEAD
     @id=[$id,"NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}"]
-=======
-    filenames = File.new("filenames.txt","a+")
-    filenames.puts("NOME:#{name}","EMAIL:#{mail}","NUMERO:#{number}")
-    filenames.puts(puts)
-    filenames.close
-    @id=["NOME: #{name}EMAIL: #{mail}NUMERO: #{number}"]
->>>>>>> d26e70ebc04a8674cc5de8b8be83397afd20cf88
     $lista+=@id
     $id+=1
     return Main_agenda.new
