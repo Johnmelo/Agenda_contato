@@ -8,7 +8,8 @@ class Interaction
     mail=gets
     puts("Numero:")
     number=gets
-    list=Contato.new(name,mail,number)
+    list=Contato.new
+    list=($id,name,mail,number)
     return Main_agenda.new
   end
   def edit_contato
@@ -25,7 +26,8 @@ class Interaction
     mail=gets
     puts "NUMERO:"
     number=gets
-    list=Contato.new(name,mail,number)
+    list=Contato.new
+    list==(catcher,name,mail,number)
     return Main_agenda.new
   end
   def see_contato
