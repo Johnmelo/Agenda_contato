@@ -1,6 +1,6 @@
 $lista=[]
 $id=0
-class Interaction
+class Contato
   def initialize(nome,email,phone)
     @name=nome
     @mail=email
