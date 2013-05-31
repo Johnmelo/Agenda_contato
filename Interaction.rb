@@ -14,24 +14,41 @@ class Interaction
   def edit_contato
     $lista.each do |bloco|
       puts " "
-      print bloco
+      puts bloco
     end
     puts "selecine o id do contato a ser editado:"
     catcher=gets
     catcher=catcher.to_i
-    puts "NOME:"
-    name=gets
-    puts "EMAIL:"
-    mail=gets
-    puts "NUMERO:"
-    number=gets
-    list=Contato.new(catcher,name,mail,number)
+    puts " "
+    puts("#############################################################")
+    puts("##                                                         ##")
+    puts("##  1-EDIT NOME 2-EDIT EMAIL 3-EDIT NUMBER 4-EDIT CONTATO  ##")
+    puts("##                                                         ##")
+    puts("#############################################################")
+    choice=gets
+    choice=choice.to_i
+    if choice == 1
+      puts "NOME:"
+      name=gets
+      Contato.edit_name.(catcher,name)
+    end
+    if choice == 2
+      puts "EMAIL:"
+      mail=gets
+      .edit_mail(catcher,mail)
+    end
+    if choice == 3
+      puts "NUMERO:"
+      number=gets
+      .edit_phone(catcher,number)
+    end
+    Contato.new(catcher,name,mail,number)
     return Main_agenda.new
   end
   def see_contato
      $lista.each do |bloco|
       puts " "
-      print bloco
+      puts bloco
     end
     return Main_agenda.new
   end
