@@ -8,7 +8,7 @@ class Interaction
     mail=gets
     puts("Numero:")
     number=gets
-    Contato.new($id,name,mail,number)
+    Contato.new.contato($id,name,mail,number)
   end
   def edit_contato
     $lista.each do |bloco|
@@ -29,18 +29,17 @@ class Interaction
     if choice == 1
       puts "NOME:"
       name=gets
-      contato=Contato.new
-      contato.edit_name(catcher,name)
+      Contato.new.edit_name(catcher,name)
     end
     if choice == 2
       puts "EMAIL:"
       mail=gets
-      contato.edit_mail(catcher,mail)
+      Contato.new.edit_mail(catcher,mail)
     end
     if choice == 3
       puts "NUMERO:"
       number=gets
-      contato.edit_phone(catcher,number)
+      Contato.new.edit_phone(catcher,number)
     end
   end
   def see_contato
