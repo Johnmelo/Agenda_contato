@@ -1,7 +1,7 @@
 class Contact_list
   @@list=[]
-  def initialize(lista)
-    @@list += [lista]
+  def initialize(id,name,mail,phone)
+    @@list << [id,name,mail,phone]
   end
   def Contact_list.see
     return @@list
