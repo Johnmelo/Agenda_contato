@@ -2,11 +2,11 @@ require_relative 'Contato.rb'
 
 class Interaction
   def add_contato
-    puts("Nome do contato:")
+    puts "Nome do contato:"
     name=gets
-    puts("e-mail:")
+    puts "e-mail:"
     mail=gets
-    puts("Numero:")
+    puts "Numero:"
     number=gets
     Contato.new.contato($id,name,mail,number)
   end
