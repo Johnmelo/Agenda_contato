@@ -11,7 +11,7 @@ class Interaction
     Contato.new($id,name,mail,number)
   end
   def edit_contato
-    $list.each do |bloco|
+    Contact_list.see.each do |bloco|
       puts " "
       puts bloco
     end
@@ -29,21 +29,21 @@ class Interaction
     if choice == 1
       puts " DIGITE O NOVO NOME:"
       name=gets
-      Contact_list.new.edit_list(catcher,choice,name)
+      Contact_list.edit(catcher,choice,name)
     end
     if choice == 2
       puts "DIGITE O NOVO E-MAIL:"
       mail=gets
-      Contact_list.new.edit_list(catcher,choice,mail)
+      Contact_list.edit(catcher,choice,mail)
     end
     if choice == 3
       puts "DIGITE O NOVO NUMERO:"
       number=gets
-      Contact_list.new.edit_list(catcher,choice,number)
+      Contact_list.edit(catcher,choice,number)
     end
   end
   def see_contato
-     $list.each do |bloco|
+    Contact_list.see.each do |bloco|
       puts " "
       puts bloco
     end
