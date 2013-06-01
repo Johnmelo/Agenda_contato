@@ -8,7 +8,7 @@ class Interaction
     mail=gets
     puts("Numero:")
     number=gets
-    Contato.add_contact($id,name,mail,number)
+    Contato.new.add_contact($id,name,mail,number)
     return Main_agenda.new
   end
   def edit_contato
@@ -30,20 +30,17 @@ class Interaction
     if choice == 1
       puts "NOME:"
       name=gets
-      h=Contato.new
-      h.edit_name(catcher,name)
+      Contato.new.edit_name(catcher,name)
     end
     if choice == 2
       puts "EMAIL:"
       mail=gets
-      h=Contato.new
-      h.edit_mail(catcher,mail)
+      Contato.new.edit_mail(catcher,mail)
     end
     if choice == 3
       puts "NUMERO:"
       number=gets
-      h=Contato.new
-      h.edit_phone(catcher,number)
+      Contato.new.edit_phone(catcher,number)
     end
     Contato.new(catcher,name,mail,number)
     return Main_agenda.new
