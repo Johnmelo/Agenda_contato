@@ -1,5 +1,3 @@
-require_relative 'Interaction.rb'
-
 $lista=[]
 $id=0
 
