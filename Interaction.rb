@@ -8,7 +8,7 @@ class Interaction
     mail=gets
     puts("Numero:")
     number=gets
-    Contato.new.add_contact($id,name,mail,number)
+    Contato.new($id,name,mail,number)
   end
   def edit_contato
     $lista.each do |bloco|
@@ -19,36 +19,28 @@ class Interaction
     catcher=gets
     catcher=catcher.to_i
     puts " "
-    puts("#############################################################")
-    puts("##                                                         ##")
-    puts("##  1-EDIT NOME 2-EDIT EMAIL 3-EDIT NUMBER 4-EDIT CONTATO  ##")
-    puts("##                                                         ##")
-    puts("#############################################################")
+    puts("################################################")
+    puts("##                                            ##")
+    puts("##  1-EDIT NOME  2-EDIT EMAIL  3-EDIT NUMBER  ##")
+    puts("##                                            ##")
+    puts("################################################")
     choice=gets
     choice=choice.to_i
     if choice == 1
       puts "NOME:"
       name=gets
-      Contato.new.edit_name(catcher,name)
+      contato=Contato.new
+      contato.edit_name(catcher,name)
     end
     if choice == 2
       puts "EMAIL:"
       mail=gets
-      Contato.new.edit_mail(catcher,mail)
+      contato.edit_mail(catcher,mail)
     end
     if choice == 3
       puts "NUMERO:"
       number=gets
-      Contato.new.edit_phone(catcher,number)
-    end
-    if choice == 4
-      puts "NOME:"
-      name=gets
-      puts "EMAIL:"
-      mail=gets
-      puts "NUMERO:"
-      number=gets
-      Contato.new.add_contact(catcher,name,mail,number)
+      contato.edit_phone(catcher,number)
     end
   end
   def see_contato
