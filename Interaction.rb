@@ -9,7 +9,6 @@ class Interaction
     puts("Numero:")
     number=gets
     Contato.new.add_contact($id,name,mail,number)
-    return Main_agenda.new
   end
   def edit_contato
     $lista.each do |bloco|
@@ -51,14 +50,12 @@ class Interaction
       number=gets
       Contato.new.add_contact(catcher,name,mail,number)
     end
-    return Main_agenda.new
   end
   def see_contato
      $lista.each do |bloco|
       puts " "
       puts bloco
     end
-    return Main_agenda.new
   end
 end
 #calma...to desenrolando :P
