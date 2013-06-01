@@ -42,7 +42,15 @@ class Interaction
       number=gets
       Contato.new.edit_phone(catcher,number)
     end
-    Contato.new(catcher,name,mail,number)
+    if choice == 4
+      puts "NOME:"
+      name=gets
+      puts "EMAIL:"
+      mail=gets
+      puts "NUMERO:"
+      number=gets
+      Contato.new.add_contact(catcher,name,mail,number)
+    end
     return Main_agenda.new
   end
   def see_contato
