@@ -1,20 +1,33 @@
+require_relative 'Contato.rb'
+
 class Contact_list
+ 
   @@list=[]
-  def initialize(contato)
-    @@list << contato
+  
+  def add_contact(id,name,mail,phone)
+    new_contact = Contato.new(id,name,mail,phone)
+    @@list << new_contact
   end
+  
   def Contact_list.see
-    return @@list
+     @@list.each do |contato|
+      puts contato.id
+      puts contato.name
+      puts contato.mail
+      puts contato.phone
+      puts " "
+    end
   end
+  
   def Contact_list.edit(id_c,id_a,change)
     if id_a == 1
-      @@list[id_c][id_a] = "NOME:#{change}"
+      @@list[id_c].name = "NAME: #{change}"
     end
     if id_a == 2
-      @@list[id_c][id_a] = "EMAIL:#{change}"
+      @@list[id_c].mail = "E-MAIL: #{change}"
     end
     if id_a == 3
-      @@list[id_c][id_a] = "PHONE:#{change}"
+      @@list[id_c].phone = "PHONE: #{change}"
     end
   end
 end
