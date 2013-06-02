@@ -1,20 +1,35 @@
-require_relative 'Contato.rb'
 require_relative 'Contact_list.rb'
+require_relative 'Contato.rb'
 class Interaction 
+  @@id=0
   def add_contato
-    puts("NOME DO CONTATO:")
-    name=gets
-    puts("E-MAIL:")
-    mail=gets
-    puts("NUMERO:")
-    number=gets
-    Contato.new($id,name,mail,number)
-  end
-  def edit_contato
-    Contact_list.see.each do |bloco|
-      puts " "
-      puts bloco
+    control = 0
+    while control!=2
+      system("clear")
+      puts("NOME DO CONTATO:")
+      name=gets
+      puts("E-MAIL:")
+      mail=gets
+      puts("NUMERO:")
+      number=gets
+      Contact_list.new.add_contact("ID: #{@@id}","NAME: #{name.chomp!}","E-MAIL: #{mail.chomp!}","NUMBER: #{number.chomp!}")
+      @@id += 1
+      puts("################################################")
+      puts("##                                            ##")
+      puts("##  1-ADD OTHER CONTACT               2-EXIT  ##")
+      puts("##                                            ##")
+      puts("################################################")
+      control=gets
+      control = control.to_i
+      if control!=1
+	control = 2
+      end
     end
+  end
+  
+  def edit_contato
+    system("clear")
+    Contact_list.see
     puts "SELECINE O ID DO CONTATO A SER EDITADO:"
     catcher=gets
     catcher=catcher.to_i
@@ -42,10 +57,22 @@ class Interaction
       Contact_list.edit(catcher,choice,number)
     end
   end
+  
   def see_contato
-    Contact_list.see.each do |bloco|
-      puts " "
-      puts bloco
+    control = 0
+    while control!=2
+      system("clear")
+      Contact_list.see
+      puts("################################################")
+      puts("##                                            ##")
+      puts("##  1-EDIT CONTACT                    2-EXIT  ##")
+      puts("##                                            ##")
+      puts("################################################")
+      control=gets
+      control = control.to_i
+      if control == 1
+	edit_contato
+      end
     end
   end
 end
