@@ -2,6 +2,7 @@ require_relative 'Interaction.rb'
 
 #class Main_agenda  
 def menu
+  system("clear")
   puts("##############################################################")
   puts("##      _______                                            ###")
   puts("##     /      /  #### #### #### ##   #  ####  ####         ###")
