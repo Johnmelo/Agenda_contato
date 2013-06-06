@@ -1,6 +1,5 @@
 require_relative 'Interaction.rb'
-
-#class Main_agenda  
+require_relative 'Contato.rb'
 def menu
   system("clear")
   puts("##############################################################")
@@ -10,22 +9,32 @@ def menu
   puts("##   /______/    #  # #### #### #   ##  ####  #  #         ###")
   puts("##                                                         ###")
   puts("##############################################################")
-  puts("## 1-VER CONTATOS  2-ADICIONAR CONTATOS  3-EDITAR CONTATOS ###")
-  puts("##                                                4-SAIR   ###")
+  puts("## 1-SEE CONTACTS  2-ADD CONTACTS  3-EDIT CONTACTS  4-EXIT ###")
+  puts("##                                                         ###")
   puts("##############################################################")
+  puts " "
+  puts "ENTER YOUR CHOICE:"
   x = gets
   x=x.to_i
   if x == 1
-    user=Interaction.new
-    user.see_contato
+    if Contato.cont > 0
+      user=Interaction.new
+      user.see_contato
+    else
+     puts "NO CONTACTS."
+    end
   end
   if x == 2
     user=Interaction.new
     user.add_contato
   end
   if x == 3
-    user=Interaction.new
-    user.edit_contato
+    if Contato.cont > 0
+      user=Interaction.new
+      user.edit_contato
+    else
+      puts "NO CONTACTS."
+    end
   end
   if x==4
     exit
