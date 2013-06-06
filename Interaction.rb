@@ -1,61 +1,60 @@
 require_relative 'Contact_list.rb'
 require_relative 'Contato.rb'
+require_relative 'Screen.rb'
 class Interaction 
-  @@id=0
   def add_contato
     control = 0
     while control!=2
       system("clear")
-      puts("NOME DO CONTATO:")
+      puts("CONTACT NAME:")
       name=gets
       puts("E-MAIL:")
       mail=gets
-      puts("NUMERO:")
+      puts("NUMBER:")
       number=gets
-      Contact_list.new.add_contact("ID: #{@@id}","NAME: #{name.chomp!}","E-MAIL: #{mail.chomp!}","NUMBER: #{number.chomp!}")
-      @@id += 1
-      puts("################################################")
-      puts("##                                            ##")
-      puts("##  1-ADD OTHER CONTACT               2-EXIT  ##")
-      puts("##                                            ##")
-      puts("################################################")
+      Contact_list.new.add_contact("NAME: #{name.chomp!}","E-MAIL: #{mail.chomp!}","NUMBER: #{number.chomp!}")
+      Screen.new.screen_add
       control=gets
       control = control.to_i
       if control!=1
 	control = 2
       end
     end
+    see_contato
   end
   
   def edit_contato
-    system("clear")
-    Contact_list.see
-    puts "SELECINE O ID DO CONTATO A SER EDITADO:"
-    catcher=gets
-    catcher=catcher.to_i
-    puts " "
-    puts("################################################")
-    puts("##                                            ##")
-    puts("##  1-EDIT NOME  2-EDIT EMAIL  3-EDIT NUMBER  ##")
-    puts("##                                            ##")
-    puts("################################################")
-    choice=gets
-    choice=choice.to_i
-    if choice == 1
-      puts " DIGITE O NOVO NOME:"
-      name=gets
-      Contact_list.edit(catcher,choice,name)
-    end
-    if choice == 2
-      puts "DIGITE O NOVO E-MAIL:"
-      mail=gets
-      Contact_list.edit(catcher,choice,mail)
-    end
-    if choice == 3
-      puts "DIGITE O NOVO NUMERO:"
-      number=gets
-      Contact_list.edit(catcher,choice,number)
-    end
+      choice=-1
+      while choice<0||choice>3
+	catcher=-1
+	while catcher<0||catcher>Contato.cont-1
+	  system("clear")
+	  Contact_list.see
+	  puts "SELECT CONTACT ID:"
+	  catcher=gets
+	  catcher=catcher.to_i
+	end
+	puts " "
+	Screen.new.screen_edit
+	choice=gets
+	choice=choice.to_i
+	if choice == 1
+	  puts "ENTER NEW NAME:"
+	  name=gets
+	  Contact_list.edit(catcher,choice,name)
+	end
+	if choice == 2
+	  puts "ENTER NEW E-MAIL:"
+	  mail=gets
+	  Contact_list.edit(catcher,choice,mail)
+	end
+	if choice == 3
+	  puts "ENTER NEW NUMBER:"
+	  number=gets
+	  Contact_list.edit(catcher,choice,number)
+	end
+      end
+      see_contato
   end
   
   def see_contato
@@ -63,11 +62,7 @@ class Interaction
     while control!=2
       system("clear")
       Contact_list.see
-      puts("################################################")
-      puts("##                                            ##")
-      puts("##  1-EDIT CONTACT                    2-EXIT  ##")
-      puts("##                                            ##")
-      puts("################################################")
+      Screen.new.screen_see
       control=gets
       control = control.to_i
       if control == 1
