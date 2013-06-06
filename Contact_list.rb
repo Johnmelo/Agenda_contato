@@ -21,13 +21,13 @@ class Contact_list
   
   def Contact_list.edit(id_c,id_a,change)
     if id_a == 1
-      @@list[id_c].name = "NAME: #{change}"
+      @@list[id_c].name = "NAME: #{change.chomp!}"
     end
     if id_a == 2
-      @@list[id_c].mail = "E-MAIL: #{change}"
+      @@list[id_c].mail = "E-MAIL: #{change.chomp!}"
     end
     if id_a == 3
-      @@list[id_c].phone = "PHONE: #{change}"
+      @@list[id_c].phone = "PHONE: #{change.chomp!}"
     end
   end
 end
