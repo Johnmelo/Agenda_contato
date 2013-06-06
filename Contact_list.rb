@@ -4,8 +4,8 @@ class Contact_list
  
   @@list=[]
   
-  def add_contact(id,name,mail,phone)
-    new_contact = Contato.new(id,name,mail,phone)
+  def add_contact(name,mail,phone)
+    new_contact = Contato.new(name,mail,phone)
     @@list << new_contact
   end
   
